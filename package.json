@@ -1,0 +1,38 @@
+{
+  "name": "knights-brawl-server",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "author": "ohexus <moskalenko.taras.d@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11",
+    "@types/mongoose": "^5.10.4",
+    "@types/node": "^14.14.37",
+    "@types/nodemon": "^1.19.0",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.2",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "log4js": "^6.3.0",
+    "mongoose": "^5.12.3",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "start": "ts-node ./index.ts",
+    "dev": "nodemon ./index.ts",
+    "lint": "eslint --ext js,ts index.ts src"
+  }
+}
