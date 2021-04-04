@@ -1,17 +1,23 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "target": "es5",
-    "module": "commonjs",
-    "lib": ["es6", "es2015"],
     "declaration": true,
-    "strict": true,
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "types": ["node"],
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": ["es6", "es2015"],
+    // "module": "commonjs",
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noImplicitAny": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true
+    "rootDir": "./src/",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es5"
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["src/**/*", "./index.ts"]
 }
