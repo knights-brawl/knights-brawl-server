@@ -5,12 +5,18 @@
     "node": true
   },
   "extends": [
-    "airbnb",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:import/typescript",
-    "plugin:jest/recommended",
-    "plugin:jest/style"
+    "plugin:import/errors",
+    "plugin:import/typescript"
+  ],
+  "overrides": [
+    {
+      "files": ["app.ts"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -28,16 +34,21 @@
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
 
+    "@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }],
+    "@typescript-eslint/explicit-function-return-type": ["error"],
+
     "import/extensions": ["error", "never", { "css": "always", "png": "always", "scss": "always", "svg": "always" }],
+    "import/order": "error",
     "max-len": ["error", { "code": 120, "ignoreTemplateLiterals": true, "tabWidth": 2 }],
     "no-console": ["error", { "allow": ["error"] }],
-    "sort-imports": [
-      "error",
-      { "allowSeparatedGroups": true, "memberSyntaxSortOrder": ["multiple", "single", "all", "none"] }
-    ],
+    "sort-imports": "off",
     "sort-keys": ["off"]
   },
   "settings": {
+    "import/order": [
+      "error",
+      { "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object"] }
+    ],
     "import/parsers": {
       "@typescript-eslint/parser": [".ts"]
     },
