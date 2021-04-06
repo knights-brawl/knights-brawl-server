@@ -6,7 +6,7 @@ const LIMITS = {
   },
   MAX_LENGTH: {
     DEFAULT: 25,
-    PASSWORD: 30,
+    PASSWORD: 50,
     EMAIL: 50,
   },
 };
