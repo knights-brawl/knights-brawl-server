@@ -1,20 +1,20 @@
+import 'module-alias/register';
+
 import * as dotenv from 'dotenv';
+dotenv.config();
+
 import express, { Application } from 'express';
 import cors from 'cors';
 
-import { connectDB } from './utils/db';
-import logger from './utils/logger';
-
-import { LOGS } from './constants';
-
-// Merge .env to process.env
-dotenv.config();
+import { LOGS } from '@constants';
+import { appRouter } from '@routes';
+import { db, logger } from '@utils';
 
 // Get Express app
 const app: Application = express();
 
 // Connect to DB or throw an error if connection not established
-connectDB()
+db.connectDB()
   .then((dbConnection) => {
     if (!dbConnection) {
       throw new Error(LOGS.ERROR.DB.CONNECTION);
@@ -28,6 +28,9 @@ app.use(cors());
 // Enable body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Add Router
+app.use(appRouter);
 
 // Start server
 const PORT = process.env.PORT;

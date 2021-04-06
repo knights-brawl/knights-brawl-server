@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 
-import logger from '../logger';
-
-import { LOGS } from '../../constants';
+import { LOGS } from '@constants';
+import { logger } from '@utils';
 
 const MONGO_URL: string | undefined = process.env.MONGO_URL;
 

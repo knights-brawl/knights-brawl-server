@@ -1,23 +1,42 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "lib": ["es6", "es2015"],
-    // "module": "commonjs",
-    "module": "ES2020",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": true,
     "noImplicitAny": true,
+    "paths": {
+      "@constants": ["src/constants"],
+      "@constants/*": ["src/constants/*"],
+      "@controllers": ["src/controllers"],
+      "@controllers/*": ["src/controllers/*"],
+      "@interfaces": ["src/interfaces"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@middlewares": ["src/middlewares"],
+      "@middlewares/*": ["src/middlewares/*"],
+      "@models": ["src/models"],
+      "@models/*": ["src/models/*"],
+      "@regexes": ["src/regexes"],
+      "@regexes/*": ["src/regexes/*"],
+      "@routes": ["src/routes"],
+      "@routes/*": ["src/routes/*"],
+      "@services": ["src/services"],
+      "@services/*": ["src/services/*"],
+      "@utils": ["src/utils"],
+      "@utils/*": ["src/utils/*"],
+      "@validation": ["src/validation"],
+      "@validation/*": ["src/validation/*"]
+    },
     "resolveJsonModule": true,
-    "rootDir": "./src/",
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "target": "es5"
   },
-  "exclude": ["node_modules"],
-  "include": ["src/**/*"]
+  "exclude": ["node_modules"]
 }
