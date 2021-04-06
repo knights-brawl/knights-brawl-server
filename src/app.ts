@@ -1,14 +1,13 @@
 import 'module-alias/register';
 
 import * as dotenv from 'dotenv';
+dotenv.config();
+
 import express, { Application } from 'express';
 import cors from 'cors';
 
 import { LOGS } from '@constants';
 import { db, logger } from '@utils';
-
-// Merge .env to process.env
-dotenv.config();
 
 // Get Express app
 const app: Application = express();
