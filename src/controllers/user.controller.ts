@@ -16,7 +16,7 @@ class UserController {
 
       successResponse(res, {
         message: LOGS.SUCCESS.USER.GET_ONE,
-        payload: user,
+        payload: { user },
         status: STATUSES.RESPONSE.SUCCESS.DEFAULT,
       });
     } catch (error) {
@@ -32,7 +32,7 @@ class UserController {
 
       successResponse(res, {
         message: LOGS.SUCCESS.USER.GET_ONE,
-        payload: user,
+        payload: { user },
         status: STATUSES.RESPONSE.SUCCESS.DEFAULT,
       });
     } catch (error) {
@@ -46,7 +46,7 @@ class UserController {
 
       successResponse(res, {
         message: LOGS.SUCCESS.USER.GET_MANY,
-        payload: users,
+        payload: { users },
         status: STATUSES.RESPONSE.SUCCESS.DEFAULT,
       });
     } catch (error) {
@@ -62,7 +62,7 @@ class UserController {
 
       successResponse(res, {
         message: LOGS.SUCCESS.USER.DELETE,
-        payload: user,
+        payload: { user },
         status: STATUSES.RESPONSE.SUCCESS.DEFAULT,
       });
     } catch (error) {
