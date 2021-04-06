@@ -15,7 +15,7 @@ class UserController {
       const user: UserDoc = await UserService.getById(req.userId);
 
       successResponse(res, {
-        message: LOGS.SUCCESS.AUTH.LOGIN,
+        message: LOGS.SUCCESS.USER.GET_ONE,
         payload: user,
         status: STATUSES.RESPONSE.SUCCESS.DEFAULT,
       });
