@@ -3,9 +3,11 @@ import * as jwt from 'jsonwebtoken';
 
 import { LOGS, STATUSES } from '@constants';
 import { UserService } from '@services';
-import { errorResponse } from '@utils/http';
+import { http } from '@utils';
 
 import { ExtendedRequest } from '@interfaces/http';
+
+const { errorResponse } = http;
 
 const jwtSecret = process.env.JWT_SECRET;
 

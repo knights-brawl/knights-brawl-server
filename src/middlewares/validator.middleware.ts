@@ -1,7 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import { Schema } from '@hapi/joi';
 
-import { errorResponse } from '@utils/http';
+import { http } from '@utils';
+
+const { errorResponse } = http;
 
 export default function validatorMiddleware(
   schema: Schema,

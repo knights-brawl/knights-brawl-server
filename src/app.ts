@@ -2,8 +2,7 @@ import * as dotenv from 'dotenv';
 import express, { Application } from 'express';
 import cors from 'cors';
 
-import { connectDB } from './utils/db';
-import logger from './utils/logger';
+import { db, logger } from './utils';
 
 import { LOGS } from './constants';
 
@@ -14,7 +13,7 @@ dotenv.config();
 const app: Application = express();
 
 // Connect to DB or throw an error if connection not established
-connectDB()
+db.connectDB()
   .then((dbConnection) => {
     if (!dbConnection) {
       throw new Error(LOGS.ERROR.DB.CONNECTION);

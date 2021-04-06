@@ -1,9 +1,11 @@
 import { LOGS } from '@constants';
 import { UserService } from '@services';
-import { comparePasswords, createToken, hashPassword } from '@utils/auth';
+import { auth } from '@utils';
 
 import { UserLogInRequest, UserSignUpRequest } from '@interfaces/http';
 import { UserDoc } from '@interfaces/entities';
+
+const { comparePasswords, createToken, hashPassword } = auth;
 
 class AuthService {
   async signUp({ email, username, password }: UserSignUpRequest): Promise<string> {

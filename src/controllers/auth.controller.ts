@@ -1,10 +1,12 @@
 import { Request, Response } from 'express';
 
 import { LOGS, STATUSES } from '@constants';
-import { errorResponse, successResponse } from '@utils/http';
+import { http } from '@utils';
 import { AuthService } from '@services';
 
 import { UserLogInRequest, UserSignUpRequest } from '@interfaces/http';
+
+const { errorResponse, successResponse } = http;
 
 class AuthController {
   postSignUp = async (req: Request, res: Response): Promise<Response> => {
