@@ -7,6 +7,7 @@ import express, { Application } from 'express';
 import cors from 'cors';
 
 import { LOGS } from '@constants';
+import { appRouter } from '@routes';
 import { db, logger } from '@utils';
 
 // Get Express app
@@ -27,6 +28,9 @@ app.use(cors());
 // Enable body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Add Router
+app.use(appRouter);
 
 // Start server
 const PORT = process.env.PORT;
