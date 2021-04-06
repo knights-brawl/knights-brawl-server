@@ -15,6 +15,7 @@
       "@constants/*": ["src/constants/*"],
       "@controllers": ["src/controllers"],
       "@controllers/*": ["src/controllers/*"],
+      "@interfaces": ["src/interfaces"],
       "@interfaces/*": ["src/interfaces/*"],
       "@middlewares": ["src/middlewares"],
       "@middlewares/*": ["src/middlewares/*"],
@@ -26,7 +27,9 @@
       "@routes/*": ["src/routes/*"],
       "@services": ["src/services"],
       "@services/*": ["src/services/*"],
+      "@utils": ["src/utils"],
       "@utils/*": ["src/utils/*"],
+      "@validation": ["src/validation"],
       "@validation/*": ["src/validation/*"]
     },
     "resolveJsonModule": true,
