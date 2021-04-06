@@ -1,5 +1,5 @@
 import { hashPassword } from '.';
-import logger from '@utils/logger';
+import { logger } from '@utils';
 
 export default async function comparePasswords(input: string, hash: string): Promise<boolean> {
   try {

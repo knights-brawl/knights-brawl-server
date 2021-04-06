@@ -1,7 +1,7 @@
 import { Response } from 'express';
 
 import { LOGS, STATUSES } from '@constants';
-import logger from '@utils/logger';
+import { logger } from '@utils';
 
 import { BackServerResponse } from '@interfaces/http';
 
