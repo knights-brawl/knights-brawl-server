@@ -11,13 +11,7 @@ const defaultSuccessResponse: BackServerResponse = {
   status: STATUSES.RESPONSE.SUCCESS.DEFAULT,
 };
 
-const defaultErrorResponse: BackServerResponse = {
-  message: LOGS.ERROR.HTTP.DEFAULT,
-  payload: { status: LOGS.SUCCESS.HTTP.DEFAULT },
-  status: STATUSES.RESPONSE.ERROR.DEFAULT,
-};
-
-export function successResponse(
+export default function successResponse(
   res: Response,
   { message, payload, status }: BackServerResponse = defaultSuccessResponse,
 ): Response {
@@ -26,21 +20,6 @@ export function successResponse(
   return res.status(status).json({
     message,
     payload: payload || {},
-    status,
-  });
-}
-
-export function errorResponse(
-  res: Response,
-  error: Error,
-  { message, status }: BackServerResponse = defaultErrorResponse,
-): Response {
-  logger.info({ message, status });
-  logger.error(error);
-
-  return res.status(status).json({
-    message,
-    payload: { error },
     status,
   });
 }
