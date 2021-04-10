@@ -6,7 +6,7 @@ module.exports = {
 
   coverageDirectory: 'coverage',
 
-  coveragePathIgnorePatterns: ['/lib/', '/node_modules/'],
+  coveragePathIgnorePatterns: ['/node_modules/'],
 
   coverageReporters: [
     // 'json',
@@ -56,6 +56,8 @@ module.exports = {
   resetMocks: true,
 
   roots: ['<rootDir>'],
+
+  setupFiles: ['<rootDir>/__tests__/setupTestEnvironment.ts'],
 
   testMatch: ['**/*.spec.ts?(x)', '**/*.test.ts?(x)'],
 };
