@@ -46,7 +46,7 @@ describe('successResponse', () => {
     });
   });
 
-  it('returns with provided response', () => {
+  it('returns with provided body', () => {
     const body: BackServerResponse = {
       message: 'foo',
       payload: { status: 'bar' },
@@ -61,5 +61,22 @@ describe('successResponse', () => {
 
     expect(res.json).toHaveBeenCalledTimes(1);
     expect(res.json).toHaveBeenCalledWith(body);
+  });
+
+  it('returns with empty payload in body', () => {
+    const body: BackServerResponse = {
+      message: 'foo',
+      payload: null,
+      status: 200,
+    };
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const res = successResponse((mockResponse() as any) as Response, body);
+
+    expect(res.status).toHaveBeenCalledTimes(1);
+    expect(res.status).toHaveBeenCalledWith(body.status);
+
+    expect(res.json).toHaveBeenCalledTimes(1);
+    expect(res.json).toHaveBeenCalledWith({ ...body, payload: {} });
   });
 });
