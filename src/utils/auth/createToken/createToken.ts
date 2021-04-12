@@ -1,11 +1,11 @@
 import { sign } from 'jsonwebtoken';
 
-const secret = process.env.JWT_SECRET;
-
 export default function createToken(userId: string): string {
-  if (!secret) {
+  const { JWT_SECRET } = process.env;
+
+  if (!JWT_SECRET) {
     throw new Error('secret is not specified!');
   }
 
-  return sign({ userId }, secret, { expiresIn: '2 days' });
+  return sign({ userId }, JWT_SECRET, { expiresIn: '2 days' });
 }
